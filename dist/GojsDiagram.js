@@ -146,16 +146,16 @@ var GojsDiagram = /** @class */ (function (_super) {
         this.myDiagram.model.removeLinkDataCollection(linksToRemove);
     };
     GojsDiagram.prototype.applyUpdatesFromModel = function () {
-        this.myDiagram.model.applyIncrementalJson({
-            class: 'go.GraphLinksModel',
-            incremental: 1,
-            nodeKeyProperty: 'key',
-            linkKeyProperty: 'key',
-            linkFromPortIdProperty: this.props.linkFromPortIdProperty || '',
-            linkToPortIdProperty: this.props.linkToPortIdProperty || '',
-            modifiedNodeData: this.props.model.nodeDataArray,
-            modifiedLinkData: this.props.model.linkDataArray
-        });
+//         this.myDiagram.model.applyIncrementalJson({
+//             class: 'go.GraphLinksModel',
+//             incremental: 1,
+//             nodeKeyProperty: 'key',
+//             linkKeyProperty: 'key',
+//             linkFromPortIdProperty: this.props.linkFromPortIdProperty || '',
+//             linkToPortIdProperty: this.props.linkToPortIdProperty || '',
+//             modifiedNodeData: this.props.model.nodeDataArray,
+//             modifiedLinkData: this.props.model.linkDataArray
+//         });
     };
     return GojsDiagram;
 }(React.PureComponent));
