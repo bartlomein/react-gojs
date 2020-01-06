@@ -1,0 +1,99 @@
+{
+    "name": "react-gojs",
+    "version": "4.5.0",
+    "description": "GoJS React integration",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "node scripts/clean.js && tsc",
+        "watch": "node scripts/clean.js && tsc -w",
+        "test": "node scripts/test.js --env=jsdom",
+        "coverage": "node scripts/test.js --env=jsdom --coverage",
+        "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+        "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xcomponent/react-gojs.git"
+    },
+    "keywords": [
+        "gojs",
+        "react"
+    ],
+    "author": "XComponent <dev@xcomponent.com> (http://www.xcomponent.com)",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/xcomponent/react-gojs/issues"
+    },
+    "homepage": "https://github.com/xcomponent/react-gojs#readme",
+    "devDependencies": {
+        "@types/enzyme": "^3.10.3",
+        "@types/jest": "^24.0.17",
+        "@types/node": "^12.7.1",
+        "@types/react": "^16.9.1",
+        "@types/react-dom": "^16.8.5",
+        "coveralls": "^3.0.6",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.14.0",
+        "husky": "^3.0.3",
+        "jest": "^24.8.0",
+        "jest-canvas-mock": "^2.1.0",
+        "prettier": "1.18.2",
+        "pretty-quick": "^1.11.1",
+        "react": "16.x",
+        "react-dom": "16.x",
+        "ts-jest": "24.0.2",
+        "tslint": "^5.18.0",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-plugin-prettier": "^2.0.1",
+        "tslint-react": "^4.0.0",
+        "typescript": "^3.5.3"
+    },
+    "dependencies": {
+        "gojs": "^2.0.15"
+    },
+    "peerDependencies": {
+        "react": "16.x",
+        "react-dom": "16.x"
+    },
+    "jest": {
+        "setupFilesAfterEnv": [
+            "<rootDir>/config/jest/setup.js"
+        ],
+        "collectCoverageFrom": [
+            "src/**/*.{js,jsx,ts,tsx}"
+        ],
+        "testMatch": [
+            "<rootDir>/src/**/?(*.)(test).ts?(x)"
+        ],
+        "testEnvironment": "node",
+        "testURL": "http://localhost",
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest",
+            "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+            "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+        },
+        "transformIgnorePatterns": [
+            "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$"
+        ],
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "jsx",
+            "mjs",
+            "node",
+            "ts",
+            "tsx",
+            "web.js",
+            "web.jsx",
+            "web.ts",
+            "web.tsx"
+        ],
+        "preset": "ts-jest"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    }
+}
